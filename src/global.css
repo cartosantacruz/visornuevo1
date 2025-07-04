@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #242C4F
+R:37 G:44 B:79
+C:96% M:85% Y:38% K:38%
+
+#45658D
+R:69 G:101 B:141
+C:79% M:56% Y:25% K:8%
+
+#E7BA61
+R:231 G:186 B:97
+C:10% M:27% Y:69% K:1%
+
+#141414
+R: 20 G:20 B:20
+C:78% M:69% Y:61% K:87%
+
+#ffffff
+R:255 G:255 B:255
+C:0% M:0% Y:0% K:0% */
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary--color: #242C4F;
+  --secondary--color: #45658D;
+  --text--color: #ffffff;
+  --active--color: #E7BA61;
+
+  --primary-default--color: #242C4F;
+  --secondary-default--color: #45658D;
+  --text-default--color: #ffffff;
+  --active-default--color: #E7BA61;
+}
+
+/* RESET GOBAL de formato predeterminado de los navegadores (El famoso borde blanco al renderizar) */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  /* Con border-box el ellemento entero mide lo que se declara y el contenido se ajusta automaticamente
+                              (Ejemplo 200px va a ser 200px en total) Con content-box el contenido mide 200px pero el elemento total puede medir mas sumando paddings, etc */
+  font-family: Helvetica;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main,
+.content {
+  flex: 1;
+}
+
+/* GLOBAL BUTTONS */
+.global-buttons button,
+.global-buttons label {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 13px;
+  transition: background-color 0.3s;
+  text-align: left;
+  user-select: none;
+  gap: 0.5rem;
+}
+
+.global-buttons .common {
+  background-color: var(--secondary--color);
+  color: var(--text--color);
+}
+
+.global-buttons .common:hover {
+  background-color: var(--active--color);
+}
+
+.global-buttons .download {
+  background-color: rgb(5, 142, 0);
+  color: var(--text--color);
+}
+
+.global-buttons .download:hover {
+  background-color: rgb(6, 185, 0);
+}
+
+.global-buttons .delete {
+  background-color: #bb0000;
+  color: var(--text--color);
+}
+
+.global-buttons .delete:hover {
+  background-color: #ff0000;
+  color: var(--text--color);
+}
+
+.global-buttons .cancel {
+  background-color: #999;
+}
+
+.global-buttons .cancel:hover {
+  background-color: #ff0000;
+  color: var(--text--color);
+}
+
+
+/* JSON FOMR styles */
+
+/* .MuiCardHeader-root {
+  background-color: yellow;
+  border-radius: 5px;
+} */
+/* LABEL del form */
+.css-1dpseql-MuiCardHeader-content {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* CONTENIDO DEL FORM */
+.MuiGrid-root {
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* .MuiCardContent-root {
+  background-color: green;
+  border-radius: 5px;
+} */
+
+.color-picker-label {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  padding: 0;
+  position: relative;
+  display: block;
+}
+
+.css-18pjc51-MuiFormLabel-root-MuiInputLabel-root {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  padding: 0;
+  position: relative;
+  display: block;
+  transform-origin: top left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Paddings de formularios */
+.css-46bh2p-MuiCardContent-root:last-child {
+  padding-bottom: 0px;
+  padding: 0px;
+}
+
+/* .css-46bh2p-MuiCardContent-root {
+	padding: 0px;
+  padding-bottom: 0px;
+} */
